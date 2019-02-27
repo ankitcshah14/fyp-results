@@ -3,14 +3,19 @@ Script to plot results of SpinningUp Tests
 author: Chirag The Fabulous
 date: 14-02-2019
 '''
+import matplotlib
 from matplotlib import pyplot as plt
 import sys
 import json
 
+font = {'family' : 'TimesNewRoman',
+        #'weight' : 'bold',
+        'size'   : 22}
+matplotlib.rc('font', **font)
 # if len(sys.argv) < 2:
 # 	print('Please enter the path of progress.txt as an argument')
 # else:
-path = './normal_ddpg_4x100_150ephs_NAN' #sys.argv[1]
+path = './poisson_ppo_15k' #sys.argv[1]
 title = ''
 with open(path + '/config.json', 'r') as config_file:
 	config = json.loads(config_file.read())
